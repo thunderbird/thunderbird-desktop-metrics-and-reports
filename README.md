@@ -1,6 +1,20 @@
 # thunderbird-desktop-metrics-and-reports
 * We require all those who participate in this repo to agree and adhere to the [Mozilla Community Participation Guidelines](https://www.mozilla.org/about/governance/policies/participation/)
 
+## 2026-02-16 gemini analysis: part 2
+* google doc: [Thunderbird Desktop Support Metrics Analysis (Dec 2025 vs January 2026](https://docs.google.com/document/d/1mrdch6Pn1Fv-dUVKxT54ZNkox0Sj5SUvF-6VxiRXu1M/edit?tab=t.0)
+
+Based on the tag data from the Thunderbird Desktop metrics for
+December 2025 and January 2026, here is the percentage share for the top-performing tags relative to the total number of questions for each month.
+<img width="989" height="590" alt="image" src="https://github.com/user-attachments/assets/cf1318a6-665c-4488-81b8-7c5d612b339b" />
+Percentage Share per Tag
+
+    thunderbird: Dominates both months, accounting for 53.5% of all tags in January, a slight increase from 52.6% in December.
+    gmail: Saw its share rise from 9.9% to 10.9%, indicating it is becoming a larger relative portion of the support workload.
+    imap: Increased its share from 8.5% to 9.1%, following the trend of connectivity-focused troubleshooting.
+    windows-10: Maintained a stable share, moving from 7.3% to 7.7%.
+    calendars: Dropped in relative importance from 5.4% to 4.9%.
+    linux: Showed the largest relative decline, falling from 3.3% to 2.8% of the total tag volume.
 ## 2026-02-16 gemini analysis:
 
 >please graph the differences on a per tag basis between https://github.com/thunderbird/thunderbird-desktop-metrics-and-reports/blob/main/CONCATENATED_FILES/2026-01-thunderbird_questions_tags.csv
