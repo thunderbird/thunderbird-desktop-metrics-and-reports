@@ -1,7 +1,7 @@
 # thunderbird-desktop-metrics-and-reports
 * We require all those who participate in this repo to agree and adhere to the [Mozilla Community Participation Guidelines](https://www.mozilla.org/about/governance/policies/participation/)
 
-## 2026-92-16 python code from gemini to generate bar graph (note: the urls array has the wrong urls!)
+## 2026-02-16 python code from gemini to generate bar graph (note: the urls array has the wrong urls!)
 ```python
 import pandas as pd
 import matplotlib.pyplot as plt
