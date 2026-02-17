@@ -2,7 +2,10 @@
 * We require all those who participate in this repo to agree and adhere to the [Mozilla Community Participation Guidelines](https://www.mozilla.org/about/governance/policies/participation/)
 ## 2026-02-16 how to count tags using mlr
 ```bash
-mlr --csv nest --explode --values --across-records --nested-fs ";" -f tags then filter -x 'is_null($tags) || $tags == ""' then count-distinct -f tags then sort -nr count 2025-yearly-thunderbird-questions.csv
+mlr --csv nest --explode --values --across-records --nested-fs ";" -f tags\
+ then filter -x 'is_null($tags) || $tags == ""'\
+ then count-distinct -f tags\
+ then sort -nr count 2025-yearly-thunderbird-questions.csv
 ```
 
 ### Output
