@@ -1,7 +1,75 @@
 # thunderbird-desktop-metrics-and-reports
 * We require all those who participate in this repo to agree and adhere to the [Mozilla Community Participation Guidelines](https://www.mozilla.org/about/governance/policies/participation/)
 
-## 2026-02-16 gemini analysis: part 2
+## 2026-92-16 python code from gemini to generate bar graph (note: the urls array has the wrong urls!)
+```python
+import pandas as pd
+import matplotlib.pyplot as plt
+from fpdf import FPDF
+import requests
+import io
+
+# 1. Download Data
+urls = {
+    "Dec_2025": "https://raw.githubusercontent.com",
+    "Jan_2026": "https://raw.githubusercontent.com"
+}
+
+def get_df(url):
+    response = requests.get(url)
+    return pd.read_csv(io.StringIO(response.text))
+
+df_dec = get_df(urls["Dec_2025"])
+df_jan = get_df(urls["Jan_2026"])
+
+# 2. Process Top Tags
+top_tags = ['thunderbird', 'gmail', 'imap', 'windows-10', 'emails', 'calendars', 'address-book', 'linux']
+dec_counts = [df_dec[df_dec['tags'] == t]['count'].sum() for t in top_tags]
+jan_counts = [df_jan[df_jan['tags'] == t]['count'].sum() for t in top_tags]
+
+# 3. Create Graph
+plt.figure(figsize=(10, 6))
+x = range(len(top_tags))
+plt.bar([i - 0.2 for i in x], dec_counts, width=0.4, label='Dec 2025', color='#2196F3')
+plt.bar([i + 0.2 for i in x], jan_counts, width=0.4, label='Jan 2026', color='#FF9800')
+plt.xticks(x, top_tags, rotation=45)
+plt.ylabel('Absolute Count')
+plt.title('Thunderbird Support Tag Volume (Dec 2025 vs Jan 2026)')
+plt.legend()
+plt.tight_layout()
+plt.savefig("comparison_graph.png") # Save graph as image for PDF
+
+# 4. Generate PDF
+pdf = FPDF()
+pdf.add_page()
+pdf.set_font("Arial", 'B', 16)
+pdf.cell(200, 10, "Thunderbird Support Metrics Report", ln=True, align='C')
+
+pdf.set_font("Arial", size=12)
+pdf.ln(10)
+pdf.cell(200, 10, "Monthly Tag Comparison (Absolute Counts)", ln=True)
+
+# Add Table
+pdf.set_font("Courier", size=10)
+pdf.cell(40, 10, "Tag", 1)
+pdf.cell(40, 10, "Dec 2025", 1)
+pdf.cell(40, 10, "Jan 2026", 1)
+pdf.ln()
+
+for i in range(len(top_tags)):
+    pdf.cell(40, 10, top_tags[i], 1)
+    pdf.cell(40, 10, str(dec_counts[i]), 1)
+    pdf.cell(40, 10, str(jan_counts[i]), 1)
+    pdf.ln()
+
+# Add Image
+pdf.image("comparison_graph.png", x=10, y=120, w=190)
+
+pdf.output("Thunderbird_Report.pdf")
+print("PDF 'Thunderbird_Report.pdf' generated successfully!")
+
+```
+## 2026-02-16 gemini analysis: part 2: google doc plus bar graph
 * google doc: [Thunderbird Desktop Support Metrics Analysis (Dec 2025 vs January 2026](https://docs.google.com/document/d/1mrdch6Pn1Fv-dUVKxT54ZNkox0Sj5SUvF-6VxiRXu1M/edit?tab=t.0)
 
 Based on the tag data from the Thunderbird Desktop metrics for
