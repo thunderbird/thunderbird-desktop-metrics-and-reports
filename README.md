@@ -1,6 +1,29 @@
 # thunderbird-desktop-metrics-and-reports
 * We require all those who participate in this repo to agree and adhere to the [Mozilla Community Participation Guidelines](https://www.mozilla.org/about/governance/policies/participation/)
 
+## 2026-02-16 gemini analysis:
+
+>please graph the differences on a per tag basis between https://github.com/thunderbird/thunderbird-desktop-metrics-and-reports/blob/main/CONCATENATED_FILES/2026-01-thunderbird_questions_tags.csv
+>and https://github.com/thunderbird/thunderbird-desktop-metrics-and-reports/blob/main/CONCATENATED_FILES/2025-12-thunderbird_questions_tags.csv.
+>Please do not make up tag names.
+>Use on the tags in the two CSV files.
+
+**Gemini:**
+
+>Comparing question tags for December 2025 and January 2026 from the Thunderbird Desktop Metrics and Reports data, "Account Setup" and "Password Issues" saw the largest increases,
+while "Sending/Receiving" and "Calendar Sync" declined.
+These trends may align with a seasonal surge after holidays and the impact of December stability updates.
+Detailed metrics are available in the Thunderbird Desktop Metrics and Reports repository
+
+>There is no tag called "Account Setup" and there is no tag called "Password Issues". Please repeat the analysis but use only the tags field in https://github.com/thunderbird/thunderbird-desktop-metrics-and-reports/blob/main/CONCATENATED_FILES/2026-01-thunderbird_questions_tags.csv and https://github.com/thunderbird/thunderbird-desktop-metrics-and-reports/blob/main/CONCATENATED_FILES/2025-12-thunderbird_questions_tags.csv.
+
+**Gemini:**
+
+>An analysis comparing the raw tags and counts from January 2026 and December 2025 CSV files reveals key shifts.
+Tags like "thunderbird", "windows-10", "emails", "gmail", and "imap" saw increases in mentions, while "calendars", "address-book",
+and "linux" tags decreased. The changes indicate potential shifts in OS usage, email protocol/provider discussions, and reduced feature-specific requests.
+
+
 ## 2026-02-16 how to count tags using mlr for January 2026 202
 
 ```bash
