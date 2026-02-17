@@ -1,6 +1,7 @@
 # thunderbird-desktop-metrics-and-reports
 * We require all those who participate in this repo to agree and adhere to the [Mozilla Community Participation Guidelines](https://www.mozilla.org/about/governance/policies/participation/)
-## 2026-02-16 how to count tags using mlr
+## 2026-02-16 how to count tags using mlr for December 2025
+* output is here: https://github.com/thunderbird/thunderbird-desktop-metrics-and-reports/blob/main/CONCATENATED_FILES/2025-12-thunderbird_questions_tags.csv
 ```bash
 mlr --csv nest --explode --values --across-records --nested-fs ";" -f tags\
  then filter -x 'is_null($tags) || $tags == ""'\
