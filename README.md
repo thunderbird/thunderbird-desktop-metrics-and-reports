@@ -1,6 +1,22 @@
 # thunderbird-desktop-metrics-and-reports
 * We require all those who participate in this repo to agree and adhere to the [Mozilla Community Participation Guidelines](https://www.mozilla.org/about/governance/policies/participation/)
 
+## 2026-02-19 rename yearly to 12
+* yearly was bogus, it was for december only.
+
+```bash
+mv 2025-yearly-thunderbird-answers.csv 2025-12-thunderbird-answers.csv
+mv 2025-yearly-thunderbird-questions.csv 2025-12-thunderbird-questions.csv
+```
+### 2026-02-19 revised mlr command for december tags
+
+```bash
+ mlr --csv nest --explode --values --across-records --nested-fs ";" -f tags\
+ then filter -x 'is_null($tags)'\
+ then count-distinct -f tags\
+ then sort -nr count 2025-yearly-thunderbird-questions.csv
+```
+
 ## 2026-02-16 python code from gemini to generate bar graph (note: the urls array has the wrong urls!)
 ```python
 import pandas as pd
