@@ -1,2 +1,2 @@
 Date,num_questions,num_solved,solved-percentage,num_ignored,ignored-percentage,synthetic_solved_by_random_contributors,synthetic_solved_by_random_contributors-percentage,synthetic_solved_by_trusted_contributors,synthetic_solved_by_trusted_contributors-percentage,synthetic_solved_rate,question_ids_question_creator_answered_last,question_ids_trusted_contributor_answered_last,question_ids_random_contributor_answered_last
-2026-05,26,7,27,6,23,1,4,11,42,69,1581170,1579466;1580069;1580136;1580163;1580286;1580875;1581041;1581124;1581159;1581356;1581358,1580312
+2026-05,27,7,26,7,26,1,4,11,41,67,1581170,1579466;1580069;1580136;1580163;1580286;1580875;1581041;1581124;1581159;1581356;1581358,1580312
