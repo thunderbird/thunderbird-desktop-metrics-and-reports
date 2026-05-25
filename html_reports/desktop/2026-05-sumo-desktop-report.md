@@ -5,13 +5,13 @@ title: Thunderbird Desktop Report - 2026-05
 
 # Thunderbird Desktop Report - 2026-05
 
-*Last updated: 2026-05-25T09:29:28.697612*
+*Last updated: 2026-05-25T11:28:25.865179*
 
 ## Summary
 
 | Date | Num Questions | Num Solved | Solved Percentage | Num Ignored | Ignored Percentage | Synthetic Solved By Random Contributors | Synthetic Solved By Random Contributors Percentage | Synthetic Solved By Trusted Contributors | Synthetic Solved By Trusted Contributors Percentage | Synthetic Solved Rate |
 | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- |
-| 2026-05 | 625 | 127 | 20 | 122 | 20 | 16 | 3 | 289 | 46 | 66 |
+| 2026-05 | 629 | 127 | 20 | 126 | 20 | 16 | 3 | 289 | 46 | 66 |
 
 ## Details
 
