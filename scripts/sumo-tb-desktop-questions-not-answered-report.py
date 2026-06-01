@@ -91,20 +91,21 @@ def parse_metadata(meta):
 
 
 def insert_linebreaks(text, col=64):
-    """Insert <br /> after the first word whose start position exceeds `col` on each line."""
+    """Insert one <br /> after the first word whose start position exceeds `col`."""
     words = text.split(' ')
     result = ''
-    line_pos = 0
+    pos = 0
     for i, word in enumerate(words):
         if i > 0:
             result += ' '
-            line_pos += 1
-        word_start = line_pos
+            pos += 1
+        word_start = pos
         result += word
-        line_pos += len(word)
+        pos += len(word)
         if word_start > col:
             result += '<br />'
-            line_pos = 0
+            result += ' '.join(words[i + 1:])
+            break
     return result
 
 
