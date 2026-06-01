@@ -23,7 +23,7 @@ DATA_DIR = 'aaq-data'
 MARKDOWN_DIR = 'UNANSWERED_QUESTIONS/MARKDOWN_REPORTS'
 CSV_DIR = 'UNANSWERED_QUESTIONS/CSV_REPORTS'
 WINDOW_HOURS = 72
-WINDOW_DAYS = 30
+WINDOW_DAYS = 14
 Q_SUFFIX = 'thunderbird-creator-answers-desktop-all-locales.csv'
 A_SUFFIX = 'thunderbird-answers-for-questions-desktop.csv'
 
