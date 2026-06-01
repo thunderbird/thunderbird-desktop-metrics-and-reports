@@ -2,10 +2,7 @@ name: gha-sumo-tb-desktop-questions-not-answered-report
 
 on:
   schedule:
-    - cron: '0 3 * * *'    # 0300 UTC
-    - cron: '0 9 * * *'    # 0900 UTC
-    - cron: '0 15 * * *'   # 1500 UTC
-    - cron: '0 22 * * *'   # 2200 UTC
+    - cron: '0 * * * *'    # every hour
   workflow_dispatch:
 
 permissions:
