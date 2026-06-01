@@ -90,9 +90,22 @@ def parse_metadata(meta):
     return version, os_str
 
 
-def insert_linebreaks(text, every=65):
-    chunks = [text[i:i + every] for i in range(0, len(text), every)]
-    return '<br />'.join(chunks)
+def insert_linebreaks(text, col=64):
+    """Insert <br /> after the first word whose start position exceeds `col` on each line."""
+    words = text.split(' ')
+    result = ''
+    line_pos = 0
+    for i, word in enumerate(words):
+        if i > 0:
+            result += ' '
+            line_pos += 1
+        word_start = line_pos
+        result += word
+        line_pos += len(word)
+        if word_start > col:
+            result += '<br />'
+            line_pos = 0
+    return result
 
 
 def to_utc_str(ts):
