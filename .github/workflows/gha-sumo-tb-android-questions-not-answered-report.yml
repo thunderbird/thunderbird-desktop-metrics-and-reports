@@ -1,0 +1,41 @@
+name: gha-sumo-tb-android-questions-not-answered-report
+
+on:
+  schedule:
+    - cron: '0 * * * *'    # every hour
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+jobs:
+  report:
+    runs-on: ubuntu-latest
+    steps:
+    - uses: actions/checkout@v5
+      with:
+        token: ${{ secrets.GITHUB_TOKEN }}
+    - name: Checkout android aaq repo
+      uses: actions/checkout@v5
+      with:
+        repository: thunderbird/github-action-tbandroid-aaq
+        path: aaq-android-data
+    - name: Install uv
+      uses: astral-sh/setup-uv@v7
+      with:
+        python-version: '3.14'
+        enable-cache: true
+    - name: Create virtual environment
+      run: uv venv
+    - name: Install dependencies
+      run: uv pip install -r requirements.txt
+    - name: Run unanswered questions report
+      run: uv run scripts/sumo-tb-android-questions-not-answered-report.py
+    - name: Commit changes
+      run: |
+        git config --global user.name 'github-actions[bot]'
+        git config --global user.email 'github-actions[bot]@users.noreply.github.com'
+        git add UNANSWERED_QUESTIONS/
+        timestamp=$(date -u)
+        git commit -m "Update unanswered Android questions report: ${timestamp}" || echo "No changes to commit"
+        git push
